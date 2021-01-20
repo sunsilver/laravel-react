@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/{any}',function(){
+    return view('App');
+//.*는 정규 표현에서 0문자 이상의 임의의 문자열을 의미한다.
+})->where('any','.*');
